@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?22335278');
+    src: url('../font/fontello.eot?22335278#iefix') format('embedded-opentype'),
+         url('../font/fontello.woff2?22335278') format('woff2'),
+         url('../font/fontello.woff?22335278') format('woff'),
+         url('../font/fontello.ttf?22335278') format('truetype'),
+         url('../font/fontello.svg?22335278#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+  /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+  /*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'fontello';
+      src: url('../font/fontello.svg?22335278#fontello') format('svg');
+    }
+  }
+  */
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+  
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+  
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+  
+  .icon-link:before { content: '\e800'; } /* '' */
+  .icon-twitter:before { content: '\f099'; } /* '' */
+  .icon-github-circled:before { content: '\f09b'; } /* '' */
+  .icon-instagram:before { content: '\f32d'; } /* '' */
+  
+
+
+
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(0, 0, 0, .2);
+    animation: nav-animation 1s forwards;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes nav-animation{
+    0%{margin-top: -70px;}
+    100%{margin-top: 0;}
+
+}
+
+nav::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    
+}
+
+nav ul li{
+    float: left;
+    padding: 20px;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 1s;
+}
+
+nav ul li a:hover{
+    transition: color 1s;
+    color: rgb(43, 120, 252);
+    animation: hover-effect 1s forwards;
+
+}
+
+@keyframes hover-effect{
+    0%{font-size: 20px;}
+    100%{font-size: 25px;}
+}
+
+.mobile-menu-button{
+    display: none;
+}
+
+@media (max-width:640px){
+    nav ul li{
+        float: none;
+        display: none;
+        animation: mobile-nav 1s forwards;
+    }
+    @keyframes mobile-nav {
+        0%{margin-top: -70px;}
+        100%{margin-top: 0;}
+    }
+    .mobile-menu-button{
+        display: block;
+    }
+}
+
+
+.hamburger{
+    display: block;
+    border-bottom: 4px solid rgb(54, 54, 54);
+    height: 10px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+.lastburger{
+    margin-bottom: 5px;
+}
+
+.mobile-menu-button + input[type="checkbox"]{
+    display: none;
+}
+
+.mobile-menu-button + input[type="checkbox"]:checked ~ ul li{
+    display: block;
+}
+
+
+
+
+.first-part{
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 900px;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+.pics-me{
+    border-radius: 50%;
+    height: 500px;
+    margin-top: 150px;
+    margin-left: 30px;
+    animation: me-animation 1s forwards;
+    float: left;
+}
+
+@keyframes me-animation {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.first-part h1{
+    margin: 0;
+    color: rgb(0, 255, 204);
+    font-size: 70px;
+    text-align: center;
+    padding-top: 200px;
+    line-height: 80px;
+    animation: h1-animation 1s forwards;
+}
+
+@keyframes h1-animation{
+    0%{margin-right: -2000px;}
+    100%{margin-right: 0;}
+}
+
+.first-part p{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+    animation: text-animation-left 1s forwards;
+    
+}
+
+@keyframes text-animation-left{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@media (max-width:1230px){
+    .pics-me{
+        height: 400px;
+    }
+    .first-part p{
+       max-width: 90%;
+       margin: 30px auto 0 auto;
+       padding-bottom: 30px;
+    }
+}
+@media (max-width:950px){
+    .pics-me{
+        float: none;
+        
+    }
+}
+
+@media (max-width:470px){
+    .first-part{
+        height: 850px;
+    }
+     .first-part h1{
+       margin: 0 10px;
+       font-size: 40px;
+       line-height: 40px;
+    }
+    .first-part p{
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 25px;
+        line-height: 35px;
+        padding:  10px;
+    }
+}
+
+.card{
+    max-width: 30rem;
+    margin: 30px auto;
+    border: none;
+    animation: card-animation 1s forwards;
+    background-color: transparent;
+    
+}
+@keyframes card-animation{
+    0%{max-width: 0; opacity: 0;}
+    40%{opacity: 0;}
+    100%{max-width: 30rem; opacity: 1;}
+
+}
+
+
+.card h1{
+    text-align: center;
+    margin: 5px 0 20px 0;
+    font-weight: bold;
+}
+
+.ps-h1{
+    color: rgb(17, 17, 104);
+}
+
+.css-h1{
+    color: rgb(27, 119, 247);
+}
+
+.html-h1{
+    color: rgb(255, 123, 0);
+}
+
+.card-text{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    gap: 100px;
+
+}
+
+.second-part{
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(226, 226, 226), rgb(214, 214, 214), rgb(255, 255, 255));
+}
+
+@media (max-width:1190px){
+    .container{
+        flex-direction: column;
+    }
+    .pics-me{
+        height: 200px;
+        margin: 30px 10px;
+        float: left;
+    }
+    .card img{
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+    }
+    .first-part h1{
+        padding:40px 0;
+    }
+    .first-part p{
+        margin-top: 80px;
+    }
+    .first-part{
+        height: 1000px;
+    }
+
+}
+
+@media (max-width:630px){
+    .pics-me{
+        float: none;
+    }
+}
+
+.third-part{
+    background-image:url(../img/background-2.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+.third-part ul{
+    list-style: none;
+    padding-top: 30px;
+    margin: 0;
+}
+
+
+.third-part a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Kanit', sans-serif;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(220, 220, 220, 0.4);
+    box-shadow: 3px 2px 10px 1px black;
+    font-size: 30px;
+    max-width: 70%;
+    margin: 70px auto;
+}
+
+.third-part a:hover{
+    animation: hover-animation .5s forwards;
+}
+
+@keyframes hover-animation{
+    0%{font-size: 30px;}
+    100%{font-size: 25px;}
+    
+}
+
+footer {
+    background-color: rgb(67, 67, 67);  
+    font-family: 'Kanit', sans-serif;
+}
+
+footer::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+
+footer ul{
+    list-style: none;
+    margin: 0;
+}
+
+footer ul li{
+    float: left;
+    padding:20px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+@media (max-width:700px){
+    footer ul li{
+        float: none;
+    }
+}
