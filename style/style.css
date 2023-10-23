@@ -343,6 +343,7 @@ nav ul li a:hover{
 }
 
 .third-part ul{
+    padding: 0;
     list-style: none;
     padding-top: 30px;
     margin: 0;
