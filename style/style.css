@@ -275,6 +275,19 @@ nav ul li a:hover{
     font-weight: bold;
 }
 
+
+.js-card{
+    margin-top: -1px;
+}
+
+.ps-card{
+    margin-top: -10px;
+}
+
+.js-h1{
+    color: rgb(224, 184, 3);
+}
+
 .ps-h1{
     color: rgb(17, 17, 104);
 }
@@ -296,6 +309,7 @@ nav ul li a:hover{
 .container{
     display: flex;
     gap: 100px;
+    max-width: 100%;
 
 }
 
@@ -303,10 +317,13 @@ nav ul li a:hover{
     background-image: linear-gradient(rgb(255, 255, 255), rgb(226, 226, 226), rgb(214, 214, 214), rgb(255, 255, 255));
 }
 
-@media (max-width:1190px){
+@media (max-width:1500px){
     .container{
         flex-direction: column;
     }
+}
+
+@media (max-width:1190px){
     .pics-me{
         height: 200px;
         margin: 30px 10px;
